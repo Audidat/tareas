@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <h2>Lista de tareas</h2>
+    <ul>
+        {% for tarea in tareas %}
+        <li> {{ tarea }} <a href="/delete/{{ loop.index -1  }}">Eliminar</a></li>
+        {% endfor %}
+    </ul>
+    <br>
+    <form action="/add">
+        <input type="text" name="tarea">
+        <input type="submit" value="Añadir">
+    </form>
+</body>
+</html>
